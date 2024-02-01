@@ -1,0 +1,31 @@
+import { Product } from '../../products/entities/product.entity';
+import {
+  Column,
+  Entity,
+  JoinColumn,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
+import { Order } from './order.entity';
+
+@Entity()
+export class OrderItem {
+  @PrimaryGeneratedColumn()
+  id: number;
+
+  @Column()
+  quantity: number;
+
+  @Column({ type: 'decimal', precision: 10, scale: 2 })
+  price: number;
+
+  @ManyToOne(() => Product)
+  @JoinColumn({ name: 'product_id' })
+  product: Product;
+
+  @Column({ name: 'product_id' })
+  productId: string;
+
+  @ManyToOne(() => Order)
+  order: Order;
+}
