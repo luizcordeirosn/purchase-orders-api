@@ -1,3 +1,3 @@
 # Microsserviço de ordens de compra
 
-Projeto sobre Microsserviço de ordens de compra com Nest.js
+Este projeto é um microsserviço de ordens de compra desenvolvido com Nest.js.
